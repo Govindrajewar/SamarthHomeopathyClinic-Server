@@ -10,10 +10,15 @@ const PORT = process.env.PORT || 8080;
 app.use(express.json());
 app.use(morgan("dev"));
 
+// Date & time
+const date = new Date();
+const formattedDate = `${date.toLocaleDateString()} ${date.toLocaleTimeString()}`;
+
 // routes
 app.get("/", (req, res) => {
   res.status(200).send({
-    message: "Server running",
+    message: "Samarth Homeopathy Clinic Server running",
+    date: formattedDate,
   });
 });
 
