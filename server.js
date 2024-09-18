@@ -18,6 +18,8 @@ const date = new Date();
 const formattedDate = `${date.toLocaleDateString()} ${date.toLocaleTimeString()}`;
 
 // routes
+app.use("/user", require("./routes/userRoutes"));
+
 app.get("/", (req, res) => {
   res.status(200).send({
     message: "Samarth Homeopathy Clinic Server running",
